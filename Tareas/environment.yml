@@ -1,0 +1,13 @@
+name: lab1_paralela
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - jupyter
+  - notebook
+  - ipykernel
+  - numpy
+  - matplotlib
+  - pandas
+  - scipy
