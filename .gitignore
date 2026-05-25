@@ -1,0 +1,14 @@
+# Compilador w64devkit (no subir al repositorio)
+prueba_1_computacion_paralela/parte_2_grupal/codigo_openmp/w64devkit/
+
+# Archivos compilados
+prueba_1_computacion_paralela/parte_2_grupal/codigo_openmp/build/
+prueba_1_computacion_paralela/parte_2_grupal/codigo_openmp/normalizacion.exe
+
+# Logs sinteticos generados
+prueba_1_computacion_paralela/parte_2_grupal/logs_sintetico.gz
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

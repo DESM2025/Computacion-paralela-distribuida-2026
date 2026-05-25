@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar y ejecutar archivo actual",
+            "type": "shell",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "$src = '${file}'; $ext = '${fileExtname}'; $name = '${fileBasenameNoExtension}'; $root = (Get-Location).Path; $dir = Split-Path -Parent $src; $resSrc = Join-Path $dir 'resource.rc'; $resArg = @(); if ($ext -eq '.c') { New-Item -ItemType Directory -Force 'build\\c' | Out-Null; $exe = 'build\\c\\' + $name + '.exe'; if (Test-Path $resSrc) { $res = Join-Path $root ('build\\c\\' + $name + '.res'); Push-Location $dir; windres.exe resource.rc -O coff -o $res; $code = $LASTEXITCODE; Pop-Location; if ($code -ne 0) { exit $code }; $resArg = @($res) }; gcc.exe -std=c17 -Wall -Wextra -pedantic -g -fopenmp $src @resArg -o $exe -lm; if ($LASTEXITCODE -eq 0) { Write-Host 'Compilado exitosamente!' -ForegroundColor Green; Write-Host ('Ejecucion: {0}' -f $exe) -ForegroundColor Yellow; & $exe } } elseif ($ext -eq '.cpp') { New-Item -ItemType Directory -Force 'build\\cpp' | Out-Null; $exe = 'build\\cpp\\' + $name + '.exe'; if (Test-Path $resSrc) { $res = Join-Path $root ('build\\cpp\\' + $name + '.res'); Push-Location $dir; windres.exe resource.rc -O coff -o $res; $code = $LASTEXITCODE; Pop-Location; if ($code -ne 0) { exit $code }; $resArg = @($res) }; g++.exe -std=c++20 -Wall -Wextra -pedantic -g -fopenmp $src @resArg -o $exe -lm; if ($LASTEXITCODE -eq 0) { Write-Host 'Compilado exitosamente!' -ForegroundColor Green; Write-Host ('Ejecucion: {0}' -f $exe) -ForegroundColor Yellow; & $exe } } else { Write-Error 'Abre un archivo .c o .cpp antes de compilar.'; exit 1 }"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/prueba_1_computacion_paralela/parte_2_grupal/codigo_openmp",
+                "env": {
+                    "Path": "${workspaceFolder}/prueba_1_computacion_paralela/parte_2_grupal/codigo_openmp/w64devkit/bin;${env:Path}"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila y ejecuta el archivo abierto usando w64devkit."
+        }
+    ]
+}

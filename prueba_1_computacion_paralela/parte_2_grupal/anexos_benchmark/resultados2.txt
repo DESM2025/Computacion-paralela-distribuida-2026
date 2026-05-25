@@ -1,0 +1,9 @@
+Benchmark Pipeline Concurrente - Ejercicio 2
+Lineas: 3,000,000 | Chunk: 100,000 | Workers: 4
+
+Config                         Tiempo(s)    Speedup    Eficiencia
+------------------------------------------------------------
+Secuencial                     39.5153      1.00       1.00
+Threading                      98.7120      0.40       0.10
+Multiprocessing                16.6633      2.37       0.59
+Hibrido asyncio+multiproc      17.7397      2.23       0.56

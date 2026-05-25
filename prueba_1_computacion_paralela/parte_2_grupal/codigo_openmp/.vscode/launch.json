@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Depurar archivo C actual",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/c/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "Path",
+                    "value": "${workspaceFolder}/w64devkit/bin;${env:Path}"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "${workspaceFolder}/w64devkit/bin/gdb.exe",
+            "preLaunchTask": "Solo compilar archivo actual",
+            "setupCommands": [
+                {
+                    "description": "Habilitar impresion legible de estructuras en GDB",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

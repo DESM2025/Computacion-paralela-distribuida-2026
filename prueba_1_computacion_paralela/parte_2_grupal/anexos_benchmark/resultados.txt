@@ -1,0 +1,10 @@
+Benchmark Normalizacion Masiva OpenMP
+Matriz: 50000000 x 16 | NaN: 5%
+
+Hilos  Tiempo(s)  Speedup  Eficiencia
+--------------------------------------
+1      18.8130    1.00     1.00
+2      10.4040    1.81     0.90
+4      5.0760     3.71     0.93
+8      2.7710     6.79     0.85
+16     2.0990     8.96     0.56

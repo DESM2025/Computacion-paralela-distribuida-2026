@@ -1,0 +1,13 @@
+1. Debes descargar primero "w64devkit" desde el link siguiente:
+https://github.com/skeeto/w64devkit/releases/download/v2.8.0/w64devkit-x64-2.8.0.7z.exe
+Esta es la versión portable de todo lo que se necesita para compilar en C/C++
+
+2. Descomprimir "w64devkit" en esta directorio de trabajo procurando encarecidamente que tenga el nombre "w64devkit" y no este dentro de otra sub-directorio.
+
+3. Utilizar "make_env.exe" en cada sub-directorio para que les genere todos los archivos de configuración. En cada sub-directorio hay que revisar que exista la carpeta .vscode para que reconozca las dependencias.
+
+4. Utilizar "openmp.code-workspace" para abrir vscode e instalar la extensión C/C++ de Microsoft y otras dependencias que se le solicite.
+
+5. Estamos listos para crear nuestros primeros programas y compilarlos con Ctrl+Shift+B o desde el botón habilitado en la parte superior de vscode.
+
+6. Puede revisar que compilen los códigos dentro del sub-directorio openmp_ejemplos que se incluye, esperar a que compile y ejecute, en el caso de "primos_muy_pesado" un par de minutos, pues realiza muchos cálculos.

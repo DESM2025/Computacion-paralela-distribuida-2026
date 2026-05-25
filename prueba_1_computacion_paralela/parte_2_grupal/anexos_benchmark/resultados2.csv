@@ -1,0 +1,5 @@
+config,tiempo,speedup,eficiencia
+Secuencial,39.5153,1.0,1.0
+Threading,98.712,0.4003,0.1001
+Multiprocessing,16.6633,2.3714,0.5928
+Hibrido asyncio+multiproc,17.7397,2.2275,0.5569
