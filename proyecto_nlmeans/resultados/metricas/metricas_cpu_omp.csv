@@ -1,2 +1,2 @@
 version,resolucion,canales,hilos,tiempo_ms,tiempo_s
-CPU_OpenMP,4912x3264,3,16,267193,267.193
+CPU_OpenMP,512x512,1,16,1385.31,1.38531

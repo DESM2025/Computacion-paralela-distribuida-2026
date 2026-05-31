@@ -1,2 +1,2 @@
 version,resolucion,canales,cuda_cores,tile_size,shared_bytes,tiempo_ms,tiempo_s
-GPU_Shared,4912x3264,3,3072,42x42,7056,3273.76,3.27376
+GPU_Shared,512x512,1,3072,42x42,7056,19.8023,0.0198023

@@ -1,2 +1,2 @@
 version,resolucion,canales,hilos,tiempo_ms,tiempo_s
-CPU_Secuencial,4912x3264,3,1,2.30917e+06,2309.17
+CPU_Secuencial,512x512,1,1,11463.2,11.4632

@@ -2,6 +2,8 @@
 #include <vector>
 #include <cmath>
 #include <fstream>
+#include <string>
+#include <io.h>
 #include <cuda_runtime.h>
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -105,8 +107,40 @@ void procesarCanal(const std::vector<float>& entrada, std::vector<float>& salida
     cudaEventDestroy(ini); cudaEventDestroy(fin);
 }
 
+std::string elegirImagen() {
+    std::vector<std::string> imagenes;
+    struct _finddata_t fi; intptr_t h;
+    const char* exts[] = {"../imagenes/*.jpg","../imagenes/*.png","../imagenes/*.bmp"};
+    for (auto& ext : exts) {
+        h = _findfirst(ext, &fi);
+        if (h != -1) { do { imagenes.push_back(std::string("../imagenes/") + fi.name); } while (_findnext(h, &fi) == 0); _findclose(h); }
+    }
+    if (imagenes.empty()) { std::cerr << "No se encontraron imagenes en ../imagenes/" << std::endl; exit(1); }
+    std::cout << "\nImagenes disponibles:" << std::endl;
+    for (int i = 0; i < (int)imagenes.size(); i++)
+        std::cout << "  [" << i+1 << "] " << imagenes[i] << std::endl;
+    int op = 0;
+    while (op < 1 || op > (int)imagenes.size()) {
+        std::cout << "Elige un numero: ";
+        if (!(std::cin >> op)) { std::cin.clear(); std::cin.ignore(1000, '\n'); op = 0; }
+        if (op < 1 || op > (int)imagenes.size()) std::cout << "Entrada invalida, intenta de nuevo." << std::endl;
+    }
+    return imagenes[op - 1];
+}
+
+bool preguntarRuido() {
+    int op = -1;
+    while (op != 0 && op != 1) {
+        std::cout << "¿Agregar ruido artificial? (1=Si / 0=No): ";
+        if (!(std::cin >> op)) { std::cin.clear(); std::cin.ignore(1000, '\n'); op = -1; }
+        if (op != 0 && op != 1) std::cout << "Entrada invalida, intenta de nuevo." << std::endl;
+    }
+    return op == 1;
+}
+
 int main(int argc, char* argv[]) {
-    const char* rutaImagen = argc > 1 ? argv[1] : "../imagenes/Original_lena512.jpg";
+    std::string rutaImagenStr = (argc > 1) ? argv[1] : elegirImagen();
+    const char* rutaImagen = rutaImagenStr.c_str();
 
     int ancho, alto, canalesOrig;
     unsigned char* datosOrig = stbi_load(rutaImagen, &ancho, &alto, &canalesOrig, 0);
@@ -125,8 +159,25 @@ int main(int argc, char* argv[]) {
             imgCanales[c][i] = (float)datosOrig[i*canalesOrig+c];
     stbi_image_free(datosOrig);
 
-    for (int c = 0; c < canales; c++)
-        agregarRuido(imgCanales[c], n, 25.0f);
+    // Nombre base para archivos de salida
+    std::string rutaStr(rutaImagen);
+    size_t sep = rutaStr.find_last_of("/\\");
+    std::string nombreBase = (sep == std::string::npos) ? rutaStr : rutaStr.substr(sep + 1);
+    size_t punto = nombreBase.find_last_of('.');
+    if (punto != std::string::npos) nombreBase = nombreBase.substr(0, punto);
+
+    bool conRuido = preguntarRuido();
+    if (conRuido) {
+        for (int c = 0; c < canales; c++)
+            agregarRuido(imgCanales[c], n, 25.0f);
+        std::string rutaRuidosa = "../resultados/imagenes/ruidosa_" + nombreBase + ".jpg";
+        std::vector<unsigned char> imgRuidosaOut(n * canales);
+        for (int i = 0; i < n; i++)
+            for (int c = 0; c < canales; c++)
+                imgRuidosaOut[i * canales + c] = (unsigned char)fmaxf(0.0f, fminf(255.0f, imgCanales[c][i]));
+        stbi_write_jpg(rutaRuidosa.c_str(), ancho, alto, canales, imgRuidosaOut.data(), 95);
+        std::cout << "Imagen ruidosa guardada en " << rutaRuidosa << std::endl;
+    }
 
     std::vector<std::vector<float>> imgLimpia(canales, std::vector<float>(n));
     float tiempoMs = 0.0f;

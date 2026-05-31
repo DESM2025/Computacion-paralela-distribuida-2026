@@ -1,0 +1,2 @@
+version,resolucion,fps,frames,cuda_cores,tile_size,shared_bytes,tiempo_total_ms,tiempo_total_s,tiempo_por_frame_ms
+GPU_Shared,1280x720,29.97,361,3072,42x42,7056,66919.9,66.9199,185.374

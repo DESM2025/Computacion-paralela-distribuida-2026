@@ -1,0 +1,2 @@
+version,resolucion,fps,frames,hilos,tiempo_total_ms,tiempo_total_s,tiempo_por_frame_ms
+CPU_OpenMP,1280x720,29.97,361,16,2.38021e+06,2380.21,6593.39

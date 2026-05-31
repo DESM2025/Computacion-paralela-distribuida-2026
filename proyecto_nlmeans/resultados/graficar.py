@@ -22,7 +22,9 @@ os.makedirs("metricas", exist_ok=True)
 os.makedirs("graficas", exist_ok=True)
 os.makedirs("imagenes", exist_ok=True)
 
-t_seq    = pd.read_csv("metricas/metricas_cpu_secuencial.csv")["tiempo_ms"].values[0]
+df_seq   = pd.read_csv("metricas/metricas_cpu_secuencial.csv")
+t_seq    = df_seq["tiempo_ms"].values[0]
+resolucion = df_seq["resolucion"].values[0]
 t_omp    = pd.read_csv("metricas/metricas_cpu_omp.csv")["tiempo_ms"].values[0]
 t_gpu    = pd.read_csv("metricas/metricas_gpu.csv")["tiempo_ms"].values[0]
 t_shared = pd.read_csv("metricas/metricas_gpu_shared.csv")["tiempo_ms"].values[0]
@@ -43,7 +45,7 @@ bars = ax.bar(versiones, tiempos, color=colores, width=0.5, edgecolor="white", l
 for bar, t in zip(bars, tiempos):
     ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + t_seq*0.012,
             f"{t:,.1f} ms", ha="center", va="bottom", fontsize=10, fontweight="bold", color="#1a1a2e")
-ax.set_title("NL-Means — Tiempo de Ejecución (512×512)", fontsize=14, fontweight="bold", pad=15, color="#1a1a2e")
+ax.set_title(f"NL-Means — Tiempo de Ejecución ({resolucion})", fontsize=14, fontweight="bold", pad=15, color="#1a1a2e")
 ax.set_ylabel("Tiempo (ms)", fontsize=12, color="#1a1a2e")
 ax.set_ylim(0, t_seq * 1.2)
 ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x:,.0f}"))
@@ -59,7 +61,7 @@ bars = ax.bar(versiones, speedups, color=colores, width=0.5, edgecolor="white", 
 for bar, s in zip(bars, speedups):
     ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(speedups)*0.012,
             f"{s:.1f}x", ha="center", va="bottom", fontsize=10, fontweight="bold", color="#1a1a2e")
-ax.set_title("NL-Means — Speedup vs CPU Secuencial (512×512)", fontsize=14, fontweight="bold", pad=15, color="#1a1a2e")
+ax.set_title(f"NL-Means — Speedup vs CPU Secuencial ({resolucion})", fontsize=14, fontweight="bold", pad=15, color="#1a1a2e")
 ax.set_ylabel("Speedup (veces más rápido)", fontsize=12, color="#1a1a2e")
 ax.set_ylim(0, max(speedups) * 1.15)
 ax.spines[["top", "right"]].set_visible(False)
@@ -75,7 +77,7 @@ for bar, t in zip(bars, tiempos):
     ax.text(bar.get_x() + bar.get_width()/2, bar.get_height()*1.5,
             f"{t:,.1f} ms", ha="center", va="bottom", fontsize=10, fontweight="bold", color="#1a1a2e")
 ax.set_yscale("log")
-ax.set_title("NL-Means — Tiempo en Escala Logarítmica (512×512)", fontsize=14, fontweight="bold", pad=15, color="#1a1a2e")
+ax.set_title(f"NL-Means — Tiempo en Escala Logarítmica ({resolucion})", fontsize=14, fontweight="bold", pad=15, color="#1a1a2e")
 ax.set_ylabel("Tiempo (ms) — escala log", fontsize=12, color="#1a1a2e")
 ax.spines[["top", "right"]].set_visible(False)
 plt.tight_layout()
