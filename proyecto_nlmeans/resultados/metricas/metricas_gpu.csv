@@ -1,0 +1,2 @@
+version,resolucion,canales,cuda_cores,tiempo_ms,tiempo_s
+GPU_CUDA,4912x3264,3,3072,2520.39,2.52039
