@@ -1,0 +1,5 @@
+Tecnologia,Longitud_Pass,Hilos_Totales,Tiempo_Setup_ms,Tiempo_Kernel_ms,Hashrate_MHs
+CUDA,0,0,0.0154,0.0000,0.00
+CUDA,4,456976,0.1775,0.1679,2721.13
+CUDA,5,11881376,0.1162,1.6189,7338.97
+CUDA,6,308915776,0.1230,50.7136,6091.38

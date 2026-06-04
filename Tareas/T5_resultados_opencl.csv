@@ -1,0 +1,5 @@
+Tecnologia,Longitud_Pass,Hilos_Totales,Tiempo_Setup_ms,Tiempo_Kernel_ms,Hashrate_MHs
+OpenCL,0,0,114.9412,0.0000,0.00
+OpenCL,4,456976,0.0166,0.0870,5250.18
+OpenCL,5,11881376,0.0071,1.9005,6251.57
+OpenCL,6,308915776,0.0068,51.3393,6017.14
