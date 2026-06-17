@@ -1,0 +1,119 @@
+{
+  "n_workers": 2,
+  "workers": [
+    "nodo1",
+    "nodo2"
+  ],
+  "tareas": [
+    {
+      "tarea": "task_primes",
+      "label": "Primos (upper=300000)",
+      "payload": {
+        "upper": 300000
+      },
+      "t_secuencial": 5.777,
+      "t_distribuido": 5.087,
+      "speedup": 1.136,
+      "resultado_dist": {
+        "total_primes": 25997,
+        "chunks_merged": 2,
+        "ranges_computed": [
+          [
+            2,
+            150000
+          ],
+          [
+            150001,
+            300000
+          ]
+        ]
+      },
+      "resultado_seq": {
+        "total_primes": 25997,
+        "chunks_merged": 1,
+        "ranges_computed": [
+          [
+            2,
+            300000
+          ]
+        ]
+      },
+      "chunks": 2,
+      "completados": 2
+    },
+    {
+      "tarea": "task_wordcount",
+      "label": "Wordcount (100k palabras)",
+      "payload": {
+        "total_words": 100000
+      },
+      "t_secuencial": 0.365,
+      "t_distribuido": 0.481,
+      "speedup": 0.759,
+      "resultado_dist": {
+        "total_tokens": 100000,
+        "unique_words": 48,
+        "lines_total": 10000,
+        "top_10": {
+          "reintento": 2210,
+          "puerto": 2195,
+          "computacion": 2171,
+          "paralela": 2159,
+          "eficiencia": 2142,
+          "proceso": 2138,
+          "it": 2128,
+          "fallo": 2126,
+          "worker": 2124,
+          "red": 2122
+        }
+      },
+      "resultado_seq": {
+        "total_tokens": 100000,
+        "unique_words": 48,
+        "lines_total": 10000,
+        "top_10": {
+          "reintento": 2210,
+          "puerto": 2195,
+          "computacion": 2171,
+          "paralela": 2159,
+          "eficiencia": 2142,
+          "proceso": 2138,
+          "it": 2128,
+          "fallo": 2126,
+          "worker": 2124,
+          "red": 2122
+        }
+      },
+      "chunks": 2,
+      "completados": 2
+    },
+    {
+      "tarea": "task_montecarlo",
+      "label": "Monte Carlo (2M muestras)",
+      "payload": {
+        "samples": 2000000
+      },
+      "t_secuencial": 10.858,
+      "t_distribuido": 8.326,
+      "speedup": 1.304,
+      "resultado_dist": {
+        "pi_estimate": 3.140184,
+        "pi_real": 3.14159265,
+        "abs_error": 0.00140865,
+        "rel_error_pct": 0.0448,
+        "total_samples": 2000000,
+        "total_inside": 1570092
+      },
+      "resultado_seq": {
+        "pi_estimate": 3.141602,
+        "pi_real": 3.14159265,
+        "abs_error": 9.35e-06,
+        "rel_error_pct": 0.0003,
+        "total_samples": 2000000,
+        "total_inside": 1570801
+      },
+      "chunks": 2,
+      "completados": 2
+    }
+  ]
+}
