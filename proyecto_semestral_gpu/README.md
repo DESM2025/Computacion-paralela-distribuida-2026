@@ -35,14 +35,24 @@ pip install pandas matplotlib opencv-python
 
 ---
 
+## Videos
+
+Los archivos de video (.mp4) no están incluidos en el repositorio debido a las limitaciones de tamaño de GitHub (archivos de 30–250 MB). Están disponibles en Google Drive:
+
+**[Descargar videos — Google Drive](https://drive.google.com/drive/folders/16nZwVe2y4QAuavekx1UiA4Dz3QVW-ak3?usp=drive_link)**
+
+Para reproducir los resultados, descarga los videos y colócalos en las carpetas correspondientes según la estructura indicada abajo.
+
+---
+
 ## Estructura del proyecto
 
 ```
 proyecto_semestral_gpu/
   cpu/                  → Código fuente CPU OpenMP
   gpu/                  → Código fuente GPU CUDA
-  videos/               → Videos de entrada (.mp4)
-  noise/                → Script para agregar ruido artificial
+  videos/               → Videos de entrada (.mp4) — ver Google Drive
+  noise/                → Script para agregar ruido + videos originales — ver Google Drive
   resultados/           → Videos filtrados, métricas y gráficas (dataset principal)
   resultados t-80/      → Resultados de validación con segundo video
   compilar.bat          → Compila las 3 versiones
