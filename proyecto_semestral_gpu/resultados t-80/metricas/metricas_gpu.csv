@@ -1,2 +1,2 @@
 version,resolucion,fps,frames,cuda_cores,tiempo_total_ms,tiempo_total_s,tiempo_por_frame_ms
-GPU_CUDA,1280x560,30,1459,3072,188782,188.782,129.391
+GPU_CUDA,1280x720,29.97,361,3072,49172.2,49.1722,136.211

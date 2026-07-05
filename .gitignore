@@ -12,3 +12,9 @@ prueba_1_computacion_paralela/parte_2_grupal/logs_sintetico.gz
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Videos MP4 (no subir - archivos grandes)
+*.mp4
+
+"proyecto_semestral_gpu/noise/*.mp4" 
+"Tareas/tarea_6/*.mp4" 

@@ -1,0 +1,89 @@
+<svg viewBox="0 0 740 248" xmlns="http://www.w3.org/2000/svg" font-family="'Georgia', 'Times New Roman', serif">
+
+  <!-- Background -->
+  <rect width="740" height="248" fill="#F8FAFC" rx="12"/>
+  <rect x="1" y="-33" width="738" height="246" fill="none" stroke="#E2E8F0" stroke-width="1.5" rx="12"/>
+
+  <!-- Formula 1: NLM-C(p) -->
+  <text x="40" y="38" fill="#374151" font-size="11" font-family="'Segoe UI', Arial, sans-serif">Píxel filtrado — promedio ponderado de todos los píxeles q en la ventana de búsqueda:</text>
+
+  <!-- NLM-C(p) = -->
+  <text x="130" y="74" text-anchor="middle" fill="#1E3A5F" font-size="18" font-style="italic">NLM-C(p)</text>
+  <text x="258" y="74" text-anchor="middle" fill="#374151" font-size="18">=</text>
+
+  <!-- Fraction 1: Sum w(p,q)·v(q) / Sum w(p,q) -->
+  <!-- Numerator -->
+  <text x="340" y="60" text-anchor="middle" fill="#1E40AF" font-size="16" font-style="italic">Σ w(p,q) · v(q)</text>
+  <line x1="290" y1="66" x2="500" y2="66" stroke="#1E40AF" stroke-width="1.5"/>
+  <!-- Denominator -->
+  <text x="395" y="86" text-anchor="middle" fill="#1E40AF" font-size="16" font-style="italic">Σ w(p,q)</text>
+  <!-- q labels -->
+  <text x="292" y="59" fill="#6B7280" font-size="10" font-style="italic">q</text>
+  <text x="292" y="96" fill="#6B7280" font-size="10" font-style="italic">q</text>
+
+  <!-- Brace / where -->
+  <text x="520" y="74" fill="#374151" font-size="13" font-family="'Segoe UI', Arial, sans-serif">∀ q ∈ ventana</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="108" x2="700" y2="108" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Formula 2: w(p,q) -->
+  <text x="40" y="128" fill="#374151" font-size="11" font-family="'Segoe UI', Arial, sans-serif">Peso entre píxeles — función exponencial de la distancia entre parches:</text>
+
+  <text x="130" y="162" text-anchor="middle" fill="#1E3A5F" font-size="17" font-style="italic">w(p, q)</text>
+  <text x="213" y="162" text-anchor="middle" fill="#374151" font-size="17">=</text>
+  <text x="260" y="162" text-anchor="middle" fill="#059669" font-size="17">exp</text>
+  <text x="290" y="162" fill="#374151" font-size="17">(</text>
+
+  <!-- Fraction inside exp: -d² / (3·49·h²) -->
+  <text x="340" y="152" text-anchor="middle" fill="#059669" font-size="15" font-style="italic">−d²(P</text>
+  <text x="390" y="157" fill="#059669" font-size="10" font-style="italic">p</text>
+  <text x="398" y="152" fill="#059669" font-size="15">, P</text>
+  <text x="420" y="157" fill="#059669" font-size="10" font-style="italic">q</text>
+  <text x="426" y="152" fill="#059669" font-size="15">)</text>
+  <line x1="305" y1="158" x2="440" y2="158" stroke="#059669" stroke-width="1.5"/>
+  <text x="372" y="176" text-anchor="middle" fill="#059669" font-size="15">3 · 49 · h²</text>
+  <text x="447" y="162" fill="#374151" font-size="17">)</text>
+
+  <text x="470" y="162" fill="#374151" font-size="12" font-family="'Segoe UI', Arial, sans-serif">  con  </text>
+  <text x="520" y="162" fill="#1E3A5F" font-size="15" font-style="italic">h</text>
+  <text x="532" y="162" fill="#374151" font-size="15"> = 10</text>
+
+  <!-- Divider -->
+  <line x1="40" y1="190" x2="700" y2="190" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Formula 3: d² -->
+  <text x="40" y="210" fill="#374151" font-size="11" font-family="'Segoe UI', Arial, sans-serif">Distancia entre parches — suma de diferencias al cuadrado en los 3 canales RGB (parche 7×7):</text>
+
+  <text x="100" y="234" text-anchor="middle" fill="#1E3A5F" font-size="15" font-style="italic">d²(P</text>
+  <text x="128" y="239" fill="#1E3A5F" font-size="10" font-style="italic">p</text>
+  <text x="136" y="234" fill="#1E3A5F" font-size="15">, P</text>
+  <text x="158" y="239" fill="#1E3A5F" font-size="10" font-style="italic">q</text>
+  <text x="163" y="234" fill="#1E3A5F" font-size="15">)</text>
+  <text x="185" y="234" fill="#374151" font-size="15">=</text>
+  <text x="220" y="234" fill="#6B7280" font-size="13" font-style="italic">Σ</text>
+  <text x="212" y="244" fill="#6B7280" font-size="9" font-style="italic">r ∈ parche</text>
+  <text x="255" y="234" fill="#374151" font-size="14">[</text>
+  <text x="268" y="234" fill="#DC2626" font-size="14">(R</text>
+  <text x="286" y="239" fill="#DC2626" font-size="9">p</text>
+  <text x="293" y="234" fill="#DC2626" font-size="14">−R</text>
+  <text x="314" y="239" fill="#DC2626" font-size="9">q</text>
+  <text x="320" y="234" fill="#DC2626" font-size="14">)</text>
+  <text x="328" y="229" fill="#DC2626" font-size="10">2</text>
+  <text x="338" y="234" fill="#374151" font-size="14"> + </text>
+  <text x="360" y="234" fill="#16A34A" font-size="14">(G</text>
+  <text x="378" y="239" fill="#16A34A" font-size="9">p</text>
+  <text x="385" y="234" fill="#16A34A" font-size="14">−G</text>
+  <text x="406" y="239" fill="#16A34A" font-size="9">q</text>
+  <text x="412" y="234" fill="#16A34A" font-size="14">)</text>
+  <text x="420" y="229" fill="#16A34A" font-size="10">2</text>
+  <text x="430" y="234" fill="#374151" font-size="14"> + </text>
+  <text x="452" y="234" fill="#1D4ED8" font-size="14">(B</text>
+  <text x="470" y="239" fill="#1D4ED8" font-size="9">p</text>
+  <text x="477" y="234" fill="#1D4ED8" font-size="14">−B</text>
+  <text x="498" y="239" fill="#1D4ED8" font-size="9">q</text>
+  <text x="504" y="234" fill="#1D4ED8" font-size="14">)</text>
+  <text x="512" y="229" fill="#1D4ED8" font-size="10">2</text>
+  <text x="522" y="234" fill="#374151" font-size="14">]</text>
+
+</svg>

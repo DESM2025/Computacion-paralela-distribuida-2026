@@ -1,0 +1,120 @@
+<svg viewBox="0 0 820 570" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000022"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="570" fill="#F8FAFC" rx="12"/>
+
+  <!-- Title -->
+  <rect x="20" y="16" width="780" height="40" rx="8" fill="#1E3A5F"/>
+  <text x="410" y="41" text-anchor="middle" fill="white" font-size="15" font-weight="bold">proyecto_semestral_gpu/  —  Estructura del Repositorio</text>
+
+  <!-- ROOT -->
+  <rect x="20" y="70" width="780" height="30" rx="6" fill="#1E3A5F" filter="url(#shadow)"/>
+  <text x="30" y="90" fill="white" font-size="13" font-weight="bold">□  proyecto_semestral_gpu/</text>
+  <text x="680" y="90" fill="#93C5FD" font-size="11">Directorio raíz</text>
+
+  <!-- Vertical trunk line -->
+  <line x1="46" y1="100" x2="46" y2="540" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- ── cpu/ ── -->
+  <line x1="46" y1="118" x2="70" y2="118" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="70" y="106" width="680" height="24" rx="5" fill="#DBEAFE"/>
+  <text x="80" y="122" fill="#1E40AF" font-size="12" font-weight="bold">□  cpu/</text>
+  <line x1="86" y1="130" x2="86" y2="152" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="86" y1="141" x2="110" y2="141" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="110" y="130" width="640" height="22" rx="4" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="120" y="145" fill="#374151" font-size="11">□  nlmeans_video_cpu_omp.cpp</text>
+  <text x="490" y="145" fill="#6B7280" font-size="10">Paralelización CPU · OpenMP · 16 hilos</text>
+
+  <!-- ── gpu/ ── -->
+  <line x1="46" y1="166" x2="70" y2="166" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="70" y="154" width="680" height="24" rx="5" fill="#DBEAFE"/>
+  <text x="80" y="170" fill="#1E40AF" font-size="12" font-weight="bold">□  gpu/</text>
+  <line x1="86" y1="178" x2="86" y2="222" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="86" y1="189" x2="110" y2="189" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="110" y="178" width="640" height="22" rx="4" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="120" y="193" fill="#374151" font-size="11">□  nlmeans_video_gpu.cu</text>
+  <text x="490" y="193" fill="#6B7280" font-size="10">Kernel CUDA · memoria global</text>
+  <line x1="86" y1="211" x2="110" y2="211" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="110" y="200" width="640" height="22" rx="4" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="120" y="215" fill="#374151" font-size="11">□  nlmeans_video_gpu_shared.cu</text>
+  <text x="490" y="215" fill="#6B7280" font-size="10">Kernel CUDA · memoria compartida</text>
+
+  <!-- ── videos/ ── -->
+  <line x1="46" y1="236" x2="70" y2="236" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="70" y="224" width="680" height="24" rx="5" fill="#DBEAFE"/>
+  <text x="80" y="240" fill="#1E40AF" font-size="12" font-weight="bold">□  videos/</text>
+  <line x1="86" y1="248" x2="86" y2="292" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="86" y1="259" x2="110" y2="259" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="110" y="248" width="640" height="22" rx="4" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="120" y="263" fill="#374151" font-size="11">□  city_ruido_sigma25.mp4</text>
+  <text x="490" y="263" fill="#6B7280" font-size="10">Dataset principal · 1280×560 · σ=25</text>
+  <line x1="86" y1="281" x2="110" y2="281" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="110" y="270" width="640" height="22" rx="4" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="120" y="285" fill="#374151" font-size="11">□  t80.mp4</text>
+  <text x="490" y="285" fill="#6B7280" font-size="10">Video de validación funcional</text>
+
+  <!-- ── noise/ ── -->
+  <line x1="46" y1="306" x2="70" y2="306" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="70" y="294" width="680" height="24" rx="5" fill="#DBEAFE"/>
+  <text x="80" y="310" fill="#1E40AF" font-size="12" font-weight="bold">□  noise/</text>
+  <line x1="86" y1="318" x2="86" y2="340" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="86" y1="329" x2="110" y2="329" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="110" y="318" width="640" height="22" rx="4" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="120" y="333" fill="#374151" font-size="11">□  agregar_ruido.py · city.mp4 · city_ruido_sigma25.mp4</text>
+  <text x="560" y="333" fill="#6B7280" font-size="10">Generación de video ruidoso</text>
+
+  <!-- ── resultados/ ── -->
+  <line x1="46" y1="354" x2="70" y2="354" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="70" y="342" width="680" height="24" rx="5" fill="#DBEAFE"/>
+  <text x="80" y="358" fill="#1E40AF" font-size="12" font-weight="bold">□  resultados/</text>
+  <line x1="86" y1="366" x2="86" y2="410" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="86" y1="377" x2="110" y2="377" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="110" y="366" width="305" height="22" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="120" y="381" fill="#1D4ED8" font-size="11">□  videos/</text>
+  <text x="200" y="381" fill="#6B7280" font-size="10">Videos filtrados</text>
+  <rect x="425" y="366" width="305" height="22" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="435" y="381" fill="#1D4ED8" font-size="11">□  graficas/</text>
+  <text x="520" y="381" fill="#6B7280" font-size="10">Gráficas PNG</text>
+  <line x1="86" y1="399" x2="110" y2="399" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="110" y="388" width="305" height="22" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="120" y="403" fill="#1D4ED8" font-size="11">□  metricas/</text>
+  <text x="210" y="403" fill="#6B7280" font-size="10">CSVs con tiempos de ejecución</text>
+  <rect x="425" y="388" width="305" height="22" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="435" y="403" fill="#1D4ED8" font-size="11">□  comparacion/</text>
+  <text x="545" y="403" fill="#6B7280" font-size="10">Frames comparados</text>
+
+  <!-- ── resultados t-80/ ── -->
+  <line x1="46" y1="424" x2="70" y2="424" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="70" y="412" width="680" height="24" rx="5" fill="#DBEAFE"/>
+  <text x="80" y="428" fill="#1E40AF" font-size="12" font-weight="bold">□  resultados t-80/</text>
+  <text x="490" y="428" fill="#6B7280" font-size="11">Datos de validación adicional</text>
+
+  <!-- ── Scripts ── -->
+  <line x1="46" y1="450" x2="70" y2="450" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="70" y="438" width="680" height="24" rx="5" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+  <text x="80" y="454" fill="#92400E" font-size="11" font-weight="bold">⊙  compilar.bat · ejecutar.bat</text>
+  <line x1="46" y1="474" x2="70" y2="474" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="70" y="462" width="680" height="24" rx="5" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="80" y="478" fill="#166534" font-size="11" font-weight="bold">□  graficar.py · extraer_frames.py</text>
+
+  <!-- Legend -->
+  <rect x="20" y="501" width="780" height="50" rx="8" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="35" y="518" fill="#6B7280" font-size="10" font-weight="bold">LEYENDA</text>
+  <rect x="35" y="526" width="14" height="10" rx="2" fill="#1E3A5F"/>
+  <text x="54" y="536" fill="#374151" font-size="10">Raíz</text>
+  <rect x="110" y="526" width="14" height="10" rx="2" fill="#DBEAFE" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="129" y="536" fill="#374151" font-size="10">Carpeta</text>
+  <rect x="200" y="526" width="14" height="10" rx="2" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="219" y="536" fill="#374151" font-size="10">Archivo fuente / video</text>
+  <rect x="360" y="526" width="14" height="10" rx="2" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="379" y="536" fill="#374151" font-size="10">Subcarpeta de resultados</text>
+  <rect x="540" y="526" width="14" height="10" rx="2" fill="#FEF9C3" stroke="#FDE68A" stroke-width="1"/>
+  <text x="559" y="536" fill="#374151" font-size="10">Script .bat</text>
+  <rect x="630" y="526" width="14" height="10" rx="2" fill="#DCFCE7" stroke="#86EFAC" stroke-width="1"/>
+  <text x="649" y="536" fill="#374151" font-size="10">Script Python</text>
+</svg>
